@@ -1,6 +1,11 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
+import { PostType } from '@/types';
 
-const Post = (post) => {
+type PostProps= {
+  post: PostType;
+};
+
+const Post = ({post}: PostProps) => {
   
     return (
         <View style={styles.container}>
