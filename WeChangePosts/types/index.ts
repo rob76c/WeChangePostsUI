@@ -12,7 +12,7 @@ export type User= {
     createdAt: string;
     image?: string;
     numberOfComments?: number;
-    numberOfRetweets?: number;
+    numberOfReposts?: number;
     numberOfLikes?: number;
     impressions?: number;
   };
