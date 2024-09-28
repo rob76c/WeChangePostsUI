@@ -1,7 +1,8 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Pressable} from 'react-native';
 import { PostType } from '@/types';
 import {Entypo} from '@expo/vector-icons';
 import IconButton from './IconButton';
+import { Link } from 'expo-router';
 
 
 type PostProps= {
@@ -9,9 +10,11 @@ type PostProps= {
 };
 
 const Post = ({post}: PostProps) => {
-  
     return (
-        <View style={styles.container}>
+      <Link href= {`../post/${post.id}`} asChild>
+
+        <Pressable style={styles.container}>
+
         <Image 
         source= {{uri: post.user.image}} // correct way for all updated versions: src={post.user.image}
         style= {styles.userImage}
@@ -43,7 +46,8 @@ const Post = ({post}: PostProps) => {
 
         </View>
       </View>
-      </View>
+      </Pressable>
+      </Link>
     );
 };
 

@@ -20,4 +20,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
+  userImage: {
+    width: 50, 
+    height: 50,
+    borderRadius: 50,
+  },
+  mainContainer: {
+    marginLeft: 10,
+  },
 });
