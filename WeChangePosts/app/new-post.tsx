@@ -22,6 +22,7 @@ export default function NewPost() {
         setText('');
         router.back();
     };
+    
     return (
         <SafeAreaView style= {{flex: 1, backgroundColor:'white'}}>
         <View style= {styles.container}>
