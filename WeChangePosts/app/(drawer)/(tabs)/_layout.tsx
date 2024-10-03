@@ -7,6 +7,11 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
+export const unstable_settings = {
+  // Ensure that reloading on `/modal` keeps a back button present.
+  initialRouteName: 'two',
+};
+
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -21,7 +26,7 @@ function AvatarHeader() {
     <Pressable onPress={() => navigation.openDrawer()}>
 
     <Image 
-    src= "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg"  
+    src= "https://firebasestorage.googleapis.com/v0/b/photos-7fc70.appspot.com/o/85124617_10157089496103042_1961321284147085312_n.jpg?alt=media&token=bfc9e521-096f-4337-b7fd-9de5b46c2ebf"  
     style={{width: 30, aspectRatio: 1, borderRadius: 40, marginLeft: 10 }}
     />
     </Pressable>
@@ -41,9 +46,9 @@ export default function TabLayout() {
         headerShown: useClientOnlyValue(false, true),
       }}>
       <Tabs.Screen
-        name="index"
+        name="(feed)"
         options={{
-          title: 'Tab One',
+          title: 'Feed',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>

@@ -3,10 +3,10 @@ const posts = [
     id: 't0',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'Robbie',
+      name: 'Robert',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://firebasestorage.googleapis.com/v0/b/photos-7fc70.appspot.com/o/85124617_10157089496103042_1961321284147085312_n.jpg?alt=media&token=bfc9e521-096f-4337-b7fd-9de5b46c2ebf',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content: 'Can you please check if the Subscribe button on Youtube works?',
@@ -71,10 +71,10 @@ const posts = [
     id: 't1',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'Robbie',
+      name: 'Robert',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://firebasestorage.googleapis.com/v0/b/photos-7fc70.appspot.com/o/85124617_10157089496103042_1961321284147085312_n.jpg?alt=media&token=bfc9e521-096f-4337-b7fd-9de5b46c2ebf',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
@@ -89,10 +89,10 @@ const posts = [
     id: 't2',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'Robbie',
+      name: 'Robert',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://firebasestorage.googleapis.com/v0/b/photos-7fc70.appspot.com/o/85124617_10157089496103042_1961321284147085312_n.jpg?alt=media&token=bfc9e521-096f-4337-b7fd-9de5b46c2ebf',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
@@ -105,10 +105,10 @@ const posts = [
     id: 't3',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'Robbie',
+      name: 'Robert',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://firebasestorage.googleapis.com/v0/b/photos-7fc70.appspot.com/o/85124617_10157089496103042_1961321284147085312_n.jpg?alt=media&token=bfc9e521-096f-4337-b7fd-9de5b46c2ebf',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content: 'Hello World',
@@ -120,10 +120,10 @@ const posts = [
     id: 't4',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'Robbie',
+      name: 'Robert',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://firebasestorage.googleapis.com/v0/b/photos-7fc70.appspot.com/o/85124617_10157089496103042_1961321284147085312_n.jpg?alt=media&token=bfc9e521-096f-4337-b7fd-9de5b46c2ebf',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:

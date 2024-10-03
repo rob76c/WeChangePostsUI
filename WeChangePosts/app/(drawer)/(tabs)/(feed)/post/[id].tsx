@@ -1,6 +1,7 @@
 import posts from "@/assets/data/posts";
 import Post from "@/components/Post";
 import { useGlobalSearchParams } from "expo-router";
+import { Text } from "react-native";
 
 
 export default function PostScreen () {

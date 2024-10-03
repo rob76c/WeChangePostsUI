@@ -5,10 +5,10 @@ import { Link, useRouter } from 'expo-router';
 const user = 
      {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'Robbie',
+      name: 'Robert',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://firebasestorage.googleapis.com/v0/b/photos-7fc70.appspot.com/o/85124617_10157089496103042_1961321284147085312_n.jpg?alt=media&token=bfc9e521-096f-4337-b7fd-9de5b46c2ebf',
     }
 
 export default function NewPost() {
