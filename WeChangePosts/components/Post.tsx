@@ -11,7 +11,7 @@ type PostProps= {
 
 const Post = ({post}: PostProps) => {
     return (
-      <Link href= {`../post/${post.id}`} asChild>
+      <Link href= {`../feed/post/${post.id}`} asChild>
 
         <Pressable style={styles.container}>
 

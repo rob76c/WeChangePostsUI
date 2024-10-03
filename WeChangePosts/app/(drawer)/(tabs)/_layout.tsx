@@ -46,7 +46,7 @@ export default function TabLayout() {
         headerShown: useClientOnlyValue(false, true),
       }}>
       <Tabs.Screen
-        name="(feed)"
+        name="feed"
         options={{
           title: 'Feed',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
