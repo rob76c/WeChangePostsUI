@@ -17,7 +17,7 @@ export default function NewPost() {
 
 
     const onPostPress = () => {
-        console.warn('Posting the tweet:',text );
+        console.warn('Posting:',text );
 
         setText('');
         router.back();
