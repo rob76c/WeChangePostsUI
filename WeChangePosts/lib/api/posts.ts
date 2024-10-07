@@ -33,3 +33,23 @@ export const getPost = async (id:string) => {
 
 
 }
+
+export const createPost = async (data: {content: string}) => {
+    const res = await fetch(`${API_URL}/post`, {
+        method: 'POST', 
+        headers: {
+          Authorization:`Bearer ${authToken}`,
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.status== 400) {
+        throw new Error('Not authorized, please sign in')
+      }
+      if (res.status !== 200) {
+        throw new Error ("Error creating post!");
+      }
+      return await res.json();
+
+
+}

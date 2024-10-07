@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import {View, StyleSheet, Text, Image, TextInput, Pressable, SafeAreaView} from 'react-native';
+import {View, StyleSheet, Text, Image, TextInput, Pressable, SafeAreaView, ActivityIndicator} from 'react-native';
 import { Link, useRouter } from 'expo-router';
+import { QueryCache, QueryClient, useMutation, useQueryClient } from '@tanstack/react-query';
+import { createPost } from '@/lib/api/posts';
 
 const user = 
      {
@@ -14,13 +16,31 @@ const user =
 export default function NewPost() {
     const[text, setText]= useState('');
     const router= useRouter();
+    const queryClient= useQueryClient();
+
+    const {mutateAsync, isLoading, isError, error} = useMutation ({
+        mutationFn: createPost,
+        onSuccess: (data) => {
+            // queryClient.invalidateQueries({queryKey: ['posts']})
+            queryClient.setQueriesData(['posts'], (existingPosts) => {
+                return [
+                data,
+                ...existingPosts,
+            ];
+        });
+        },
+    });
 
 
-    const onPostPress = () => {
-        console.warn('Posting:',text );
+    const onPostPress = async () => {
+        try {
+            await mutateAsync({content:text});
 
-        setText('');
-        router.back();
+            setText('');
+            router.back();
+        } catch (e){
+            console.log('Error:', e.message);
+        }
     };
     
     return (
@@ -31,6 +51,7 @@ export default function NewPost() {
             <Link href = "../" style= {{fontSize: 20}}>
             Cancel
             </Link>
+            {isLoading && <ActivityIndicator/>}
 
             <Pressable onPress={onPostPress} style= {styles.button}>
                 <Text style ={styles.buttonText}>Post</Text>
@@ -48,6 +69,8 @@ export default function NewPost() {
             style= {{flex: 1}}
             />
         </View>
+
+        {isError&& <Text> Error: {error.message}</Text>}
         </View>
         </SafeAreaView>
     );
