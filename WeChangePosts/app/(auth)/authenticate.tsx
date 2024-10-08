@@ -2,10 +2,13 @@ import { View, Text, TextInput, Pressable, StyleSheet, Alert } from 'react-nativ
 import React, { useState } from 'react';
 import { useGlobalSearchParams } from 'expo-router';
 import { authenticate } from '@/lib/api/auth';
+import { useAuth } from '@/context/AuthContext';
 
-const SignIn = () => {
+const Authenticate = () => {
     const [code, setCode]= useState('');
     const {email}= useGlobalSearchParams();
+
+    const {setAuthToken} = useAuth();
 
     const onConfirm= async () => {
         if (typeof email !== 'string') {
@@ -13,6 +16,7 @@ const SignIn = () => {
         }
         try {
             const res = await authenticate ({email, emailToken: code});
+            setAuthToken(res.authToken)
             console.log(res);
             
         } catch(e) {
@@ -75,4 +79,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default SignIn;
+export default Authenticate;
