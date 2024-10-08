@@ -1,13 +1,23 @@
-import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native'
+import { View, Text, TextInput, Pressable, StyleSheet, Alert } from 'react-native'
 import React, { useState } from 'react';
 import { useGlobalSearchParams } from 'expo-router';
+import { authenticate } from '@/lib/api/auth';
 
 const SignIn = () => {
     const [code, setCode]= useState('');
     const {email}= useGlobalSearchParams();
 
     const onConfirm= async () => {
-        console.warn('Authenticate:', email, code);
+        if (typeof email !== 'string') {
+            return;
+        }
+        try {
+            const res = await authenticate ({email, emailToken: code});
+            console.log(res);
+            
+        } catch(e) {
+            Alert.alert('Error', "This code does not match. ")
+        }
     };
   return (
     <View style= {styles.container}>
