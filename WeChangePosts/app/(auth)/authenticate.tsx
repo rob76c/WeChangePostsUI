@@ -8,7 +8,7 @@ const Authenticate = () => {
     const [code, setCode]= useState('');
     const {email}= useGlobalSearchParams();
 
-    const {setAuthToken} = useAuth();
+    const {updateAuthToken} = useAuth();
 
     const onConfirm= async () => {
         if (typeof email !== 'string') {
@@ -16,7 +16,7 @@ const Authenticate = () => {
         }
         try {
             const res = await authenticate ({email, emailToken: code});
-            setAuthToken(res.authToken)
+            await updateAuthToken(res.authToken);
             console.log(res);
             
         } catch(e) {
