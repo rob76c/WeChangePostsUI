@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {View, StyleSheet, Text, Image, TextInput, Pressable, SafeAreaView, ActivityIndicator} from 'react-native';
 import { Link, useRouter } from 'expo-router';
 import { QueryCache, QueryClient, useMutation, useQueryClient } from '@tanstack/react-query';
-import { createPost } from '@/lib/api/posts';
+import { usePostsApi } from '@/lib/api/posts';
 
 const user = 
      {
@@ -16,6 +16,8 @@ const user =
 export default function NewPost() {
     const[text, setText]= useState('');
     const router= useRouter();
+    const {createPost} = usePostsApi();
+
     const queryClient= useQueryClient();
 
     const {mutateAsync, isLoading, isError, error} = useMutation ({

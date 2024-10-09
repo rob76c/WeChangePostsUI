@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AuthContextProvidor from '@/context/AuthContext';
+import PostsApiContextProvider from '@/lib/api/posts';
 
 import { useColorScheme } from '@/components/useColorScheme';
 
@@ -56,6 +57,7 @@ function RootLayoutNav() {
   return (
     <>
     <AuthContextProvidor>
+      <PostsApiContextProvider>
     <QueryClientProvider client={client}>
 
     <ThemeProvider 
@@ -70,6 +72,7 @@ function RootLayoutNav() {
       </Stack>
     </ThemeProvider>
     </QueryClientProvider>
+    </PostsApiContextProvider>
     </AuthContextProvidor>
     </>
   );

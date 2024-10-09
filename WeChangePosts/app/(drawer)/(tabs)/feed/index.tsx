@@ -4,11 +4,13 @@ import Post from '@/components/Post';
 import Entypo from '@expo/vector-icons/Entypo';
 import { Link } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { listPosts } from '@/lib/api/posts';
+import { usePostsApi } from '@/lib/api/posts';
 import { useQuery } from '@tanstack/react-query';
 import { Text } from 'react-native';
 
 export default function FeedScreen() {
+  const {listPosts}= usePostsApi();
+
   const {data, isLoading, error} = useQuery ({
     queryKey: ['posts'],
     queryFn: listPosts,
