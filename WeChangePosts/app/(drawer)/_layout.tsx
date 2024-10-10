@@ -27,6 +27,7 @@ export default function DrawerLayout() {
   if(!authToken) {
     return <ActivityIndicator/>
   }
+  
     return ( 
         <Drawer drawerContent={(props) => <CustomDrawerContent {...props}/>}>
         <Drawer.Screen name="(tabs)" options={{headerShown: false, title: 'Home'}} />
